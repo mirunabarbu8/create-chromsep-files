@@ -15,22 +15,25 @@ Please note the file creates an output directory named "out" in the current dire
 
 ----------------------------------------------------------
 
-The package contains two DNAm annotation files in .rds format, depending on which array your DNAm data is in (450K array or EPIC array); please supply either the 450K or EPIC array to argument "--annotfile" when running the Rscript
+Below are instructions on how to obtain two DNAm annotation files in .rds format, depending on which array your DNAm data is in (450K array or EPIC array); please supply either the 450K or EPIC array to argument "--annotfile" when running the Rscript
 
 The two files are derived from the BiocManager IlluminaHumanMethylation packages:
 
 # 450K array
 
-# BiocManager::install("IlluminaHumanMethylation450kanno.ilmn12.hg19")
-# IlluminaHumanMethylation450kmanifest # check manifest file
-# library(IlluminaHumanMethylation450kanno.ilmn12.hg19)
-# annot.file450 <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+BiocManager::install("IlluminaHumanMethylation450kanno.ilmn12.hg19")
+IlluminaHumanMethylation450kmanifest # check manifest file
+library(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+annot.file450 <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+saveRDS(annot.file450, "/path/to/annotation-450k-file.rds")
 
 # EPIC array
-# BiocManager::install("IlluminaHumanMethylationEPICanno.ilm10b2.hg19")
-# IlluminaHumanMethylationEPICmanifest # check manifest file
-# library(IlluminaHumanMethylationEPICanno.ilm10b2.hg19)
-# annot.file <- getAnnotation(IlluminaHumanMethylationEPICanno.ilm10b2.hg19)
+
+BiocManager::install("IlluminaHumanMethylationEPICanno.ilm10b2.hg19")
+IlluminaHumanMethylationEPICmanifest # check manifest file
+library(IlluminaHumanMethylationEPICanno.ilm10b2.hg19)
+annot.fileepic <- getAnnotation(IlluminaHumanMethylationEPICanno.ilm10b2.hg19)
+saveRDS(annot.fileepic, "/path/to/annotation-epic-file.rds")
 
 ----------------------------------------------------------
 
