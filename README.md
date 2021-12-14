@@ -6,10 +6,12 @@ The current package contains the Rscript and files necessary to separate DNAm fi
 ----------------------------------------------------------
 
 Rscript file: DNAm_separate_files.R
+
 Please load R version 3.6.3
 
 The file requires two arguments, --methdata and --annotfile; the following is an example:
-Rscript DNAm_separate_files.R --methdata /path/to/methylation-data.rds --annotfile /path/to/annotation-file.rds
+
+```Rscript DNAm_separate_files.R --methdata /path/to/methylation-data.rds --annotfile /path/to/annotation-file.rds```
 
 Please note the file creates an output directory named "out" in the current directory, where the script runs. Chromosome-separated files will be stored here, in the following format: "mvalues.chr%.rds" (where % = chr1:22).
 
